@@ -13,8 +13,6 @@
  * CHANGELOG:
  * DATE-------------AUTHOR--------------REASON
  * 07/24/16			TBG					Original Release
- * 07/24/16         TBG                 Convert enum to struct for attack
- * 										power
  ***************************************************************************/
 
 
@@ -73,9 +71,7 @@ int main(void)
 		chris->checkKill();
 
 		/* Tyler attack chris will ATTACK */
-		tyler->attack(charListPtr->select("Tyler"),
-				      tyler->characterSpells[1].spellAttackPower);
-
+		tyler->attack(charListPtr->select("Tyler"), ATTACK);
 	} /* END while */
 
 	/* Delete chris pointer */

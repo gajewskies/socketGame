@@ -14,8 +14,6 @@
  * CHANGELOG:
  * DATE-------------AUTHOR--------------REASON
  * 07/24/16			TBG					Original Release
- * 07/24/16         TBG                 Convert enum to struct for attack
- * 										power
  ***************************************************************************/
 
 #ifndef _CHARACTER_H_
@@ -91,7 +89,7 @@ class character
 		 * This will apply argSpell damage to argEnemy health
 		 * Takes the enemy character points and spell as arguments
 		 */
-		void attack(character *argEnemy, int argSpellDamage);
+		void attack(character *argEnemy, spells argSpell);
 
 		/* This will check weather the characters health is 0 and will exit if so */
 		void checkKill(void);

@@ -57,37 +57,77 @@ void character::init(void)
     switch(getClass())
     {
     	case SHAMAN:
-   		    characterSpells[0].spell = ATTACK;
-   		    characterSpells[1].spell = FIRE_WEAPON;
-   		    characterSpells[2].spell = REJUVINATE;
+   		    characterSpells[0].spell            = ATTACK;
+   		    characterSpells[0].spellName        = spellToString(characterSpells[0].spell);
+   		    characterSpells[0].spellAttackPower = 1;
+
+   		    characterSpells[1].spell            = FIRE_WEAPON;
+   		    characterSpells[1].spellName        = spellToString(characterSpells[1].spell);
+    		characterSpells[1].spellAttackPower = 5;
+
+   		    characterSpells[2].spell            = REJUVINATE;
+   		    characterSpells[2].spellName        = spellToString(characterSpells[2].spell);
+   		    characterSpells[2].spellAttackPower = 6;
 
    		    setHealth(SHAMAN_HEALTH);
    		    break;
    	   case WARRIOR:
-   		   characterSpells[0].spell = ATTACK;
-   		   characterSpells[1].spell = WHIRL_WIND;
-   		   characterSpells[2].spell = SHOUT;
+   		   characterSpells[0].spell            = ATTACK;
+   		   characterSpells[0].spellName        = spellToString(characterSpells[0].spell);
+   		   characterSpells[0].spellAttackPower = 1;
+
+   		   characterSpells[1].spell            = WHIRL_WIND;
+    	   characterSpells[1].spellName        = spellToString(characterSpells[1].spell);
+   		   characterSpells[1].spellAttackPower = 5;
+
+   		   characterSpells[2].spell            = SHOUT;
+   	 	   characterSpells[2].spellName        = spellToString(characterSpells[2].spell);
+   		   characterSpells[2].spellAttackPower = 6;
 
    		   setHealth(WARRIOR_HEALTH);
    		   break;
    	   case WARLOCK:
-   		   characterSpells[0].spell = ATTACK;
-   		   characterSpells[1].spell = SHADOW_BOLT;
+   		   characterSpells[0].spell            = ATTACK;
+   		   characterSpells[0].spellName        = spellToString(characterSpells[0].spell);
+   		   characterSpells[0].spellAttackPower = 1;
+
+   		   characterSpells[1].spell            = SHADOW_BOLT;
+   		   characterSpells[1].spellName        = spellToString(characterSpells[1].spell);
+   		   characterSpells[1].spellAttackPower = 5;
+
    		   characterSpells[2].spell = CURSE;
+   		   characterSpells[2].spellName        = spellToString(characterSpells[2].spell);
+   		   characterSpells[2].spellAttackPower = 6;
 
    		   setHealth(WARLOCK_HEALTH);
    		   break;
    	   case PRIEST:
-   		   characterSpells[0].spell = ATTACK;
+   		   characterSpells[0].spell            = ATTACK;
+   		   characterSpells[0].spellName        = spellToString(characterSpells[0].spell);
+   		   characterSpells[0].spellAttackPower = 1;
+
    		   characterSpells[1].spell = SMITE;
+   		   characterSpells[1].spellName        = spellToString(characterSpells[1].spell);
+   		   characterSpells[1].spellAttackPower = 5;
+
    		   characterSpells[2].spell = HEAL;
+   		   characterSpells[2].spellName        = spellToString(characterSpells[2].spell);
+   		   characterSpells[2].spellAttackPower = 6;
 
    		   setHealth(PRIEST_HEALTH);
    		   break;
    	   case ROUGUE:
-   		   characterSpells[0].spell = ATTACK;
-   		   characterSpells[1].spell = BACK_STAB;
-   		   characterSpells[2].spell = SLICE;
+   		   characterSpells[0].spell            = ATTACK;
+   		   characterSpells[0].spellName        = spellToString(characterSpells[0].spell);
+   		   characterSpells[0].spellAttackPower = 1;
+
+   		   characterSpells[1].spell            = BACK_STAB;
+   		   characterSpells[1].spellName        = spellToString(characterSpells[1].spell);
+   		   characterSpells[1].spellAttackPower = 5;
+
+   		   characterSpells[2].spell            = SLICE;
+   		   characterSpells[2].spellName        = spellToString(characterSpells[2].spell);
+   		   characterSpells[2].spellAttackPower = 6;
 
    		   setHealth(ROUGUE_HEALTH);
    		   break;
@@ -218,7 +258,7 @@ void character::showSpells(void)
 {
     for (int i = 0; i < 3; i++)
     {
-      std::cout << characterSpells[i].spell << std::endl;
+      std::cout << spellToString(characterSpells[i].spell) << std::endl;
     } /* END for */
 } /* END showSpells */
 
@@ -240,9 +280,9 @@ void character::damage(int argDamage)
   characterStats.characterHealth -= argDamage;
 } /* END damage */
 
-void character::attack(character *argEnemy, int argSpellDamage)
+void character::attack(character *argEnemy, spells argSpell)
 {
-  argEnemy->damage(argSpellDamage);
+  argEnemy->damage(argSpell);
 } /* END attack */
 
 /* This will check to see if it should kill the character */
