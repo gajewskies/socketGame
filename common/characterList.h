@@ -31,7 +31,7 @@
 #include "character.h"
 
 /* This is the amount of characters registered */
-static int amount = 0;
+static int amount;
 
 class characterList
 {

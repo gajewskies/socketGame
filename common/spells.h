@@ -14,6 +14,8 @@
  * CHANGELOG:
  * DATE-------------AUTHOR--------------REASON
  * 07/24/16			TBG					Original Release
+ * 07/24/16         TBG                 Convert enum to struct for attack
+ * 										power
  ***************************************************************************/
 
 #ifndef _SPELLS_H_
@@ -22,7 +24,7 @@
 typedef enum
 {
   /* Base */
-  ATTACK = 100,
+  ATTACK,
 
   /* Warrior */
   WHIRL_WIND,
@@ -45,13 +47,32 @@ typedef enum
   SLICE
 } spells;
 
+
 /*
 * This is the struct to hold the character spells
 */
 struct characterSpellsStruct
 {
-  /* An array of spells the character has */
-  spells spell[3];
-}; /* END characterSpellsStruct */
+	/*
+	 * This is the enum value of the spell
+	 * Will be used to convert to the spellName
+	 */
+	spells spell;
+
+	/* This is the spell name */
+	std::string spellName;
+
+	/* This is the attack power of the spell */
+	int spellAttackPower;
+};
+
+/*
+* This is the struct to hold the character spells
+*/
+//struct characterSpellsStruct
+//{
+//  /* An array of spells the character has */
+//  spells spell[3];
+//}; /* END characterSpellsStruct */
 
 #endif /* _SPELLS_H_ */

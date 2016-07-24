@@ -31,7 +31,9 @@
 characterList *characterList::instance = NULL;
 
 characterList::characterList(void)
-{} /* END characterList */
+{
+	amount = 0;
+} /* END characterList */
 
 characterList::~characterList(void)
 {} /* END characterList */
