@@ -10,6 +10,7 @@
  *  character, main
  *
  * TODO:
+ *	1. Find a better way to store all the spells.
  *
  * CHANGELOG:
  * DATE-------------AUTHOR--------------REASON
@@ -67,12 +68,9 @@ struct characterSpellsStruct
 };
 
 /*
-* This is the struct to hold the character spells
-*/
-//struct characterSpellsStruct
-//{
-//  /* An array of spells the character has */
-//  spells spell[3];
-//}; /* END characterSpellsStruct */
+ * TODO 1. Find a better way to store all the spells.
+ * Store the spell name, min attack power, max attack power.
+ */
+
 
 #endif /* _SPELLS_H_ */
